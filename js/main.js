@@ -12,16 +12,29 @@ const listaSpesa = [
     'waghiu iberico',
     'patanegra',
 ];
-// aggancio all'id nell'html
-const listElement = document.getElementById('lista-spesa');
-console.log(listElement);
-let index = 0
+const button = document.getElementById('btn-genera');
+button.addEventListener('click', function () {
+    listaSpesa.push(prompt('add shopping list'));
 
-while (index < listaSpesa.length) {
+    // aggancio all'id nell'html
 
-    i++
+    const listElement = document.getElementById('lista-spesa');
+    console.log(listElement);
+    let index = 0;
 
-    console.log(listElement[i]);
-    const elementList = document.createElement('li');
-    elementList
-}
+    // creo un ciclo while per gestire l'array listaSpesa
+    while (index < listaSpesa.length) {
+
+        index++
+
+        console.log(listElement[index]);
+        const elementList = document.createElement('li');
+        elementList.innerHTML += listaSpesa[index];
+
+        // aggancio la lista con append all'html
+
+        listElement.append(elementList);
+    }
+})
+
+// creo un prompt in cui chiedo all'utente di inserire un nuovo elemento 
